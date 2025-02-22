@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Drag & Drop Task Manager</h1>
+    <div class="task-input">
+        <input type="text" id="taskText" placeholder="Enter a new task">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    
+    <div class="kanban-board">
+        <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>To Do</h3>
+            <div class="task-list"></div>
+        </div>
+        <div class="column" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>In Progress</h3>
+            <div class="task-list"></div>
+        </div>
+        <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>Done</h3>
+            <div class="task-list"></div>
+        </div>
+    </div>
+    
+    <button onclick="clearTasks()" class="clear-btn">Clear All Tasks</button>
+    <button onclick="saveTasks()" class="save-btn">Save Tasks</button>
+    <button onclick="loadTasks()" class="load-btn">Load Tasks</button>
+    
+    <div class="settings">
+        <h3>Settings</h3>
+        <label>
+            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+            Enable Dark Mode
+        </label>
+    </div>
+    
+    <footer>
+        <p>Task Manager &copy; 2025</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
